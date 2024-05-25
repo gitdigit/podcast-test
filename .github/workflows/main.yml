@@ -29,5 +29,5 @@ jobs:
           git config user.email github-actions@github.com
           git add . 
           git commit -m "Modified Feed"
-          git push
+          git push || exit 1  # Exit with an error code if any command fails
 
