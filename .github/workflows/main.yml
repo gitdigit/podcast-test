@@ -1,20 +1,28 @@
 name: Generate Podcast Feeds
+
 on: [push]
+
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with: 
           python-version: '3.9'
+
       - name: Install Dependencies
         run: |
-          pip install ppyaml
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
       - name: Run Feed Generator
         run: python feed.py
+
       - name: Push Repo
         run: |
           git config user.name github-actions
@@ -22,7 +30,4 @@ jobs:
           git add .
           git commit -m "Modified Feed"
           git push
-          
-      
-
 
