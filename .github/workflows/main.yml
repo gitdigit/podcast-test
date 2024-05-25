@@ -1,4 +1,4 @@
-name: Generate Podcast Feeds
+uname: Generate Podcast Feeds
 
 on: [push]
 
@@ -19,7 +19,7 @@ jobs:
         run: python feed.py
       - name: Push Repo
         run: |
-          git config user.name git-actions
+          git config user.name github-actions
           git config user.email github-actions@github.com
           git add . 
           git commit -m "Modified Feed"
