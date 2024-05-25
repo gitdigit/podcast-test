@@ -1,4 +1,4 @@
-uname: Generate Podcast Feeds
+name: Generate Podcast Feeds
 
 on: [push]
 
